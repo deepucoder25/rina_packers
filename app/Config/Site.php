@@ -31,7 +31,7 @@ class Site extends BaseConfig
         'addressRegion' => 'Guwahati',
         'postalCode'    => '781025',
         'companystate'  => 'Assam',
-        'themeColor'    => '#14489cff',
+        'themeColor'    => '#003B8E',
 
         'experience'    => '20+',
         'startYear'     => '2006',
