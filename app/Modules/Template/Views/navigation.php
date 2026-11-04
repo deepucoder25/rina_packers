@@ -9,7 +9,7 @@ $wh          = $workingHours ?? ($site->workingHours ?? 'Mon - Sat: 9:00 AM - 8:
             <!-- Left Info Items -->
             <div class="d-flex align-items-center flex-wrap gap-2 gap-md-3">
                 <!-- Phone 1 -->
-                <a <?= $phonehtml ?> class="topbar-item topbar-phone" title="Call <?= esc($phone ?? '') ?>">
+                <a <?= $phonehtml ?> class="topbar-item topbar-phone" title="Call <?= $phone ?>">
                     <i class="bi bi-telephone-fill"></i>
                     <span><?= $phone ?></span>
                 </a>
@@ -31,7 +31,7 @@ $wh          = $workingHours ?? ($site->workingHours ?? 'Mon - Sat: 9:00 AM - 8:
                 <!-- Email -->
                 <?php if (!empty($mail)): ?>
                 <span class="topbar-sep d-none d-lg-inline">|</span>
-                <a href="<?= esc($mailhtml ?? ('mailto:' . $mail)) ?>" class="topbar-item topbar-mail d-none d-lg-inline-flex" title="Email Us">
+                <a href="<?= $mailhtml ?>" class="topbar-item topbar-mail d-none d-lg-inline-flex" title="Email Us">
                     <i class="bi bi-envelope-fill"></i>
                     <span><?= esc($mail) ?></span>
                 </a>
@@ -71,7 +71,7 @@ $wh          = $workingHours ?? ($site->workingHours ?? 'Mon - Sat: 9:00 AM - 8:
         <div class="d-flex align-items-center justify-content-between">
             <!-- 1. Brand Logo Image -->
             <a class="navbar-brand d-inline-flex align-items-center m-0 p-0 text-decoration-none" href="<?= site_url('/') ?>">
-                <img src="<?= base_url('assets/img/logo/logo.png') ?>" alt="<?= esc($company3 ?? 'Rina Packers') ?>" class="site-logo">
+                <img src="<?= base_url('assets/img/logo/logo.png') ?>" alt="<?= $company3 ?>" class="site-logo">
             </a>
 
             <!-- Right Controls: 2. Call Capsule (Tablet/Desktop), 3. Get Quote Btn, 4. Hamburger -->
@@ -111,7 +111,7 @@ $wh          = $workingHours ?? ($site->workingHours ?? 'Mon - Sat: 9:00 AM - 8:
         <div class="container d-flex align-items-center justify-content-between p-0">
             <!-- Brand Logo -->
             <a class="d-inline-flex align-items-center text-decoration-none m-0" href="<?= site_url('/') ?>" id="siteMenuOffcanvasLabel">
-                <img src="<?= base_url('assets/img/logo/logo.png') ?>" alt="<?= esc($company3 ?? 'Rina Packers') ?>" class="site-logo">
+                <img src="<?= base_url('assets/img/logo/logo.png') ?>" alt="<?= $company3 ?>" class="site-logo">
             </a>
 
             <!-- Right Controls: Badge + Big Close Button -->
@@ -209,54 +209,36 @@ $wh          = $workingHours ?? ($site->workingHours ?? 'Mon - Sat: 9:00 AM - 8:
 
                 <!-- Col 2: All Relocation Services (Shown directly) -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="fs-menu-heading"><i class="bi bi-box-seam me-1"></i> All Services</div>
+                    <div class="fs-menu-heading"><i class="bi bi-box-seam me-1"></i> Our Services</div>
                     <div class="d-flex flex-column gap-2">
-                        <!-- 1. Household Moving -->
-                        <a class="fs-service-link" href="<?= site_url('services/household-moving') ?>" title="Household Moving">
+                        <!-- 1. House Shifting -->
+                        <a class="fs-service-link" href="<?= site_url('services/household-moving') ?>" title="House Shifting">
                             <span class="d-inline-flex align-items-center">
-                                <span class="service-icon-box"><i class="bi bi-house-heart"></i></span>
-                                <span>Household Moving</span>
+                                <span class="service-icon-box"><i class="bi bi-house-door"></i></span>
+                                <span>House Shifting</span>
                             </span>
                             <i class="bi bi-chevron-right service-arrow"></i>
                         </a>
 
                         <!-- 2. Office Relocation -->
-                        <a class="fs-service-link" href="<?= site_url('services/office-relocation') ?>" title="Office Corporate Relocation">
+                        <a class="fs-service-link" href="<?= site_url('services/office-relocation') ?>" title="Office Relocation">
                             <span class="d-inline-flex align-items-center">
-                                <span class="service-icon-box"><i class="bi bi-briefcase"></i></span>
+                                <span class="service-icon-box"><i class="bi bi-building"></i></span>
                                 <span>Office Relocation</span>
                             </span>
                             <i class="bi bi-chevron-right service-arrow"></i>
                         </a>
 
-                        <!-- 3. Car & Bike Transport -->
-                        <a class="fs-service-link" href="<?= site_url('services/vehicle-transportation') ?>" title="Car & Bike Transportation">
+                        <!-- 3. Vehicle Transportation -->
+                        <a class="fs-service-link" href="<?= site_url('services/vehicle-transportation') ?>" title="Vehicle Transportation">
                             <span class="d-inline-flex align-items-center">
                                 <span class="service-icon-box"><i class="bi bi-car-front"></i></span>
-                                <span>Car &amp; Bike Transport</span>
+                                <span>Vehicle Transportation</span>
                             </span>
                             <i class="bi bi-chevron-right service-arrow"></i>
                         </a>
 
-                        <!-- 4. Warehouse & Storage -->
-                        <a class="fs-service-link" href="<?= site_url('services/warehouse-storage') ?>" title="Warehouse & Storage">
-                            <span class="d-inline-flex align-items-center">
-                                <span class="service-icon-box"><i class="bi bi-building"></i></span>
-                                <span>Warehouse Storage</span>
-                            </span>
-                            <i class="bi bi-chevron-right service-arrow"></i>
-                        </a>
-
-                        <!-- 5. Packing & Moving -->
-                        <a class="fs-service-link" href="<?= site_url('services/packing-moving') ?>" title="Packing & Moving">
-                            <span class="d-inline-flex align-items-center">
-                                <span class="service-icon-box"><i class="bi bi-box-seam"></i></span>
-                                <span>Packing &amp; Moving</span>
-                            </span>
-                            <i class="bi bi-chevron-right service-arrow"></i>
-                        </a>
-
-                        <!-- 6. Loading & Unloading -->
+                        <!-- 4. Loading & Unloading -->
                         <a class="fs-service-link" href="<?= site_url('services/loading-unloading') ?>" title="Loading & Unloading">
                             <span class="d-inline-flex align-items-center">
                                 <span class="service-icon-box"><i class="bi bi-truck"></i></span>
@@ -265,13 +247,40 @@ $wh          = $workingHours ?? ($site->workingHours ?? 'Mon - Sat: 9:00 AM - 8:
                             <i class="bi bi-chevron-right service-arrow"></i>
                         </a>
 
-                        <!-- 7. View All Services CTA -->
-                        <a class="fs-service-all-btn mt-1" href="<?= site_url('services') ?>">
-                            <span class="d-inline-flex align-items-center gap-2">
-                                <i class="bi bi-grid-fill"></i>
-                                <span>View All Relocation Services</span>
+                        <!-- 5. Packing & Unpacking -->
+                        <a class="fs-service-link" href="<?= site_url('services/packing-moving') ?>" title="Packing & Unpacking">
+                            <span class="d-inline-flex align-items-center">
+                                <span class="service-icon-box"><i class="bi bi-box-seam"></i></span>
+                                <span>Packing &amp; Unpacking</span>
                             </span>
-                            <i class="bi bi-arrow-right"></i>
+                            <i class="bi bi-chevron-right service-arrow"></i>
+                        </a>
+
+                        <!-- 6. Storage Solutions -->
+                        <a class="fs-service-link" href="<?= site_url('services/warehouse-storage') ?>" title="Storage Solutions">
+                            <span class="d-inline-flex align-items-center">
+                                <span class="service-icon-box"><i class="bi bi-archive"></i></span>
+                                <span>Storage Solutions</span>
+                            </span>
+                            <i class="bi bi-chevron-right service-arrow"></i>
+                        </a>
+
+                        <!-- 7. Local Shifting -->
+                        <a class="fs-service-link" href="<?= site_url('services/local-shifting') ?>" title="Local Shifting">
+                            <span class="d-inline-flex align-items-center">
+                                <span class="service-icon-box"><i class="bi bi-geo-alt"></i></span>
+                                <span>Local Shifting</span>
+                            </span>
+                            <i class="bi bi-chevron-right service-arrow"></i>
+                        </a>
+
+                        <!-- 8. Insurance Coverage -->
+                        <a class="fs-service-link" href="<?= site_url('services/insurance-coverage') ?>" title="Insurance Coverage">
+                            <span class="d-inline-flex align-items-center">
+                                <span class="service-icon-box"><i class="bi bi-shield-check"></i></span>
+                                <span>Insurance Coverage</span>
+                            </span>
+                            <i class="bi bi-chevron-right service-arrow"></i>
                         </a>
                     </div>
                 </div>

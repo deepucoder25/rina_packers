@@ -1,17 +1,50 @@
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-badge">What We Offer</span>
-            <h2 class="section-title">Our Professional Services</h2>
-            <p class="section-subtitle">Comprehensive, door-to-door relocation and storage solutions tailored to your schedule.</p>
+<section class="section py-5 bg-light">
+    <div class="container py-lg-3">
+        <div class="text-center mb-5">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 fw-bold text-uppercase mb-2">Our Core Expertise</span>
+            <h2 class="display-6 fw-bold text-dark">Professional Relocation Services</h2>
+            <p class="text-muted mx-auto" style="max-width: 650px;">Comprehensive, door-to-door relocation and storage solutions tailored to your schedule.</p>
         </div>
-        <div class="card-grid">
-            <?php foreach ($services as $srv): ?>
-                <div class="service-box">
-                    <div class="service-icon"><i class="fa-solid <?= esc($srv['icon']) ?>"></i></div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: var(--dark);"><?= esc($srv['title']) ?></h3>
-                    <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6; margin-bottom: 20px;"><?= esc($srv['desc']) ?></p>
-                    <a href="<?= site_url('services/' . $srv['slug']) ?>" style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">View Details &rarr;</a>
+        <div class="row g-4">
+            <?php
+            $iconMap = [
+                'household-moving'       => 'bi-house-heart-fill',
+                'office-relocation'      => 'bi-briefcase-fill',
+                'vehicle-transportation' => 'bi-car-front-fill',
+                'warehouse-storage'      => 'bi-building-fill-lock',
+                'packing-moving'         => 'bi-box-seam-fill',
+                'loading-unloading'      => 'bi-truck',
+                'local-shifting'         => 'bi-geo-alt-fill',
+                'insurance-coverage'     => 'bi-shield-check'
+            ];
+            foreach ($services as $srv):
+                $bsIcon = $iconMap[$srv['slug']] ?? 'bi-box-seam-fill';
+            ?>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon-wrap">
+                                <i class="bi <?= $bsIcon ?>"></i>
+                            </div>
+                            <h3 class="service-title"><?= esc($srv['title']) ?></h3>
+                            <p class="service-desc"><?= esc($srv['desc']) ?></p>
+                            <?php if (!empty($srv['features'])): ?>
+                            <ul class="service-features-list">
+                                <?php foreach (array_slice($srv['features'], 0, 3) as $f): ?>
+                                    <li><i class="bi bi-check-circle-fill"></i> <?= esc($f) ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <?php endif; ?>
+                        </div>
+                        <div class="service-card-actions">
+                            <a href="<?= site_url('services/' . $srv['slug']) ?>" class="btn-service-view">
+                                <span>Details</span> <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <button type="button" class="btn-service-book" data-bs-toggle="modal" data-bs-target="#qteModal">
+                                <i class="bi bi-send-fill"></i> <span>Get Quote</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>

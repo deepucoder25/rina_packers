@@ -42,6 +42,8 @@ $routes->get('car-transportation', '\Modules\Services\Controllers\Services::deta
 $routes->get('packing-and-moving', '\Modules\Services\Controllers\Services::detail/packing-moving');
 $routes->get('loading-unloading', '\Modules\Services\Controllers\Services::detail/loading-unloading');
 $routes->get('storage-services', '\Modules\Services\Controllers\Services::detail/warehouse-storage');
+$routes->get('local-shifting', '\Modules\Services\Controllers\Services::detail/local-shifting');
+$routes->get('insurance-coverage', '\Modules\Services\Controllers\Services::detail/insurance-coverage');
 
 // Branch / City Routes (Packers & Movers)
 $routes->get('our-branches', '\Modules\City\Controllers\City::index');
