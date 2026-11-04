@@ -33,6 +33,7 @@ class Contacts_mdl extends Model
         $mfrom   = $request->getPost('mfrom');
         $mto     = $request->getPost('mto');
         $msg     = $request->getPost('message');
+        $mtype   = $request->getPost('mtype');
 
         // Insert booking data into the database (Config/Database.php se auto-connect)
         $this->db->table('bookings')->insert([
@@ -41,11 +42,12 @@ class Contacts_mdl extends Model
             'phone' => $phone,
             'mfrom' => $mfrom,
             'mto'   => $mto,
-            'msg'   => $msg
+            'msg'   => $msg ?: ($mtype ? "Service: " . $mtype : null),
+            'mtype' => $mtype
         ]);
 
         // Admin notification email
-        $msgd = "Services Needed";
+        $msgd = !empty($mtype) ? $mtype : "Services Needed";
         $adminMessage = "<div style='padding:30px;background:#e6e6e6;font-size: 18px !important;'>Client's Query: <b><q>$msgd</q></b><br><br>Client's Name:  <b>" . esc($name) . "</b><br><br>From: <b>" . esc($mfrom) . "</b><br><br>To: <b>" . esc($mto) . "</b><br><br>Phone Number: <b><a href='tel:" . esc($phone) . "'>" . esc($phone) . "</a></b><br><br>Email: <b> " . esc($email) . "</b><br><br>Client Msg: <b>" . esc($msg) . "</b></div>";
 
         $mailService = service('email');

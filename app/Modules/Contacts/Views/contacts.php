@@ -51,11 +51,14 @@
                         <div class="field-wrap">
                             <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px;">Required Service</label>
                             <select name="service" class="form-control">
-                                <option value="Household Moving">Household Moving</option>
+                                <option value="House Shifting" selected>House Shifting</option>
                                 <option value="Office Relocation">Office Relocation</option>
-                                <option value="Vehicle Transport">Vehicle Transport</option>
-                                <option value="Warehouse Storage">Warehouse Storage</option>
+                                <option value="Vehicle Transportation">Vehicle Transportation</option>
+                                <option value="Loading & Unloading">Loading & Unloading</option>
                                 <option value="Packing & Unpacking">Packing & Unpacking</option>
+                                <option value="Storage Solutions">Storage Solutions</option>
+                                <option value="Local Shifting">Local Shifting</option>
+                                <option value="Insurance Coverage">Insurance Coverage</option>
                             </select>
                         </div>
                     </div>
