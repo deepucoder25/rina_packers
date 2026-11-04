@@ -11,6 +11,7 @@ class Home extends BaseController
     public function index(): string
     {
         $serviceModel = new ServiceModel();
+        $reviewsModel = new \Modules\Reviews\Models\Reviews_mdl();
 
         $data['title']       = $this->comp['company3'] . ", " . $this->comp['phone'];
         $data['description'] = "Your trusted partner for hassle-free, secure relocations. Efficient home and office moving services with competitive pricing. Contact " . $this->comp['company3'] . " at " . $this->comp['phone'] . ".";
@@ -18,6 +19,7 @@ class Home extends BaseController
         $data['module']      = 'home';
         $data['view_file']   = 'Modules\Home\Views\home';
         $data['services']    = $serviceModel->getAll();
+        $data['reviews']     = $reviewsModel->get_reviews(6);
 
         return Template::layout1($data);
     }

@@ -122,10 +122,10 @@ $websiteUrl  = 'www.rinapackers.com';
                         <div class="contact-icon-bubble">
                             <i class="bi bi-telephone-fill"></i>
                         </div>
-                        <div class="contact-item-text">
-                            <a <?= $phonehtml ?>><?= $phone ?></a>
+                        <div class="contact-item-text d-flex flex-column gap-2">
+                            <a <?= $phonehtml ?> class="d-inline-flex align-items-center py-1"><?= $phone ?></a>
                             <?php if (!empty($phone1)): ?>
-                            <a <?= $phonehtml1 ?>><?= $phone1 ?></a>
+                            <a <?= $phonehtml1 ?> class="d-inline-flex align-items-center py-1"><?= $phone1 ?></a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -165,7 +165,7 @@ $websiteUrl  = 'www.rinapackers.com';
                             <i class="bi bi-shield-check"></i>
                         </div>
                         <div class="prop-info">
-                            <h6 class="prop-title">SAFE &amp; SECURE</h6>
+                            <div class="prop-title">SAFE &amp; SECURE</div>
                             <p class="prop-desc">Your belongings are in safe hands</p>
                         </div>
                     </div>
@@ -178,7 +178,7 @@ $websiteUrl  = 'www.rinapackers.com';
                             <i class="bi bi-stopwatch"></i>
                         </div>
                         <div class="prop-info">
-                            <h6 class="prop-title">ON TIME DELIVERY</h6>
+                            <div class="prop-title">ON TIME DELIVERY</div>
                             <p class="prop-desc">Timely service, every time</p>
                         </div>
                     </div>
@@ -191,7 +191,7 @@ $websiteUrl  = 'www.rinapackers.com';
                             <i class="bi bi-people"></i>
                         </div>
                         <div class="prop-info">
-                            <h6 class="prop-title">HAPPY CUSTOMERS</h6>
+                            <div class="prop-title">HAPPY CUSTOMERS</div>
                             <p class="prop-desc">10,000+ satisfied customers</p>
                         </div>
                     </div>
@@ -204,7 +204,7 @@ $websiteUrl  = 'www.rinapackers.com';
                             <i class="bi bi-award"></i>
                         </div>
                         <div class="prop-info">
-                            <h6 class="prop-title">15+ YEARS EXPERIENCE</h6>
+                            <div class="prop-title">15+ YEARS EXPERIENCE</div>
                             <p class="prop-desc">Trusted service with experienced team</p>
                         </div>
                     </div>
@@ -217,7 +217,7 @@ $websiteUrl  = 'www.rinapackers.com';
                             <i class="bi bi-headset"></i>
                         </div>
                         <div class="prop-info">
-                            <h6 class="prop-title">24/7 SUPPORT</h6>
+                            <div class="prop-title">24/7 SUPPORT</div>
                             <p class="prop-desc">We are always here to help you</p>
                         </div>
                     </div>

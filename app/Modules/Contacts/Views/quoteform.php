@@ -109,60 +109,60 @@
                     <!-- Custom Dropdown Menu -->
                     <ul class="dropdown-menu quote-dropdown-menu shadow-lg" aria-labelledby="heroQteServiceLabel">
                         <li>
-                            <a class="dropdown-item quote-dropdown-item active" href="javascript:void(0)" data-value="House Shifting">
+                            <button type="button" class="dropdown-item quote-dropdown-item active" data-value="House Shifting">
                                 <span class="quote-item-icon"><i class="bi bi-house-door-fill"></i></span>
                                 <span class="quote-item-name">House Shifting</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a class="dropdown-item quote-dropdown-item" href="javascript:void(0)" data-value="Office Relocation">
+                            <button type="button" class="dropdown-item quote-dropdown-item" data-value="Office Relocation">
                                 <span class="quote-item-icon"><i class="bi bi-building-fill"></i></span>
                                 <span class="quote-item-name">Office Relocation</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a class="dropdown-item quote-dropdown-item" href="javascript:void(0)" data-value="Vehicle Transportation">
+                            <button type="button" class="dropdown-item quote-dropdown-item" data-value="Vehicle Transportation">
                                 <span class="quote-item-icon"><i class="bi bi-car-front-fill"></i></span>
                                 <span class="quote-item-name">Vehicle Transportation</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a class="dropdown-item quote-dropdown-item" href="javascript:void(0)" data-value="Loading & Unloading">
+                            <button type="button" class="dropdown-item quote-dropdown-item" data-value="Loading & Unloading">
                                 <span class="quote-item-icon"><i class="bi bi-truck-flatbed"></i></span>
                                 <span class="quote-item-name">Loading &amp; Unloading</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a class="dropdown-item quote-dropdown-item" href="javascript:void(0)" data-value="Packing & Unpacking">
+                            <button type="button" class="dropdown-item quote-dropdown-item" data-value="Packing & Unpacking">
                                 <span class="quote-item-icon"><i class="bi bi-box-seam-fill"></i></span>
                                 <span class="quote-item-name">Packing &amp; Unpacking</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a class="dropdown-item quote-dropdown-item" href="javascript:void(0)" data-value="Storage Solutions">
+                            <button type="button" class="dropdown-item quote-dropdown-item" data-value="Storage Solutions">
                                 <span class="quote-item-icon"><i class="bi bi-archive-fill"></i></span>
                                 <span class="quote-item-name">Storage Solutions</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a class="dropdown-item quote-dropdown-item" href="javascript:void(0)" data-value="Local Shifting">
+                            <button type="button" class="dropdown-item quote-dropdown-item" data-value="Local Shifting">
                                 <span class="quote-item-icon"><i class="bi bi-geo-alt-fill"></i></span>
                                 <span class="quote-item-name">Local Shifting</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a class="dropdown-item quote-dropdown-item" href="javascript:void(0)" data-value="Insurance Coverage">
+                            <button type="button" class="dropdown-item quote-dropdown-item" data-value="Insurance Coverage">
                                 <span class="quote-item-icon"><i class="bi bi-shield-check"></i></span>
                                 <span class="quote-item-name">Insurance Coverage</span>
                                 <i class="bi bi-check-lg quote-item-check ms-auto"></i>
-                            </a>
+                            </button>
                         </li>
                     </ul>
                 </div>
