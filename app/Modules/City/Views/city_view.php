@@ -1,7 +1,7 @@
 <div class="page-banner">
     <div class="container">
         <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / 
+            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / 
             <a href="<?= site_url('city') ?>">All States</a> / 
             <a href="<?= site_url('city/' . $stateSlug) ?>"><?= esc($stateName) ?></a> / 
             <span><?= esc($cityName) ?></span>
@@ -47,22 +47,22 @@
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="fa-solid fa-house-chimney"></i></div>
+                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="bi bi-house-door-fill"></i></div>
                             <h4 style="font-weight: 700; margin-bottom: 8px;">Household Shifting</h4>
                             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">Complete residential moving with multi-layer bubble wrap, cartons, and delicate electronics safety.</p>
                         </div>
                         <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="fa-solid fa-briefcase"></i></div>
+                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="bi bi-briefcase-fill"></i></div>
                             <h4 style="font-weight: 700; margin-bottom: 8px;">Office Corporate Shifting</h4>
                             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">Low downtime corporate workplace relocation, server equipment, and modular furniture setup.</p>
                         </div>
                         <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="fa-solid fa-car"></i></div>
+                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="bi bi-car-front-fill"></i></div>
                             <h4 style="font-weight: 700; margin-bottom: 8px;">Car & Bike Transport</h4>
                             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">Covered container trailers and customized wooden crating for two-wheelers with door-to-door transit.</p>
                         </div>
                         <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="fa-solid fa-warehouse"></i></div>
+                            <div style="color: var(--primary); font-size: 1.4rem; margin-bottom: 10px;"><i class="bi bi-buildings-fill"></i></div>
                             <h4 style="font-weight: 700; margin-bottom: 8px;">Warehouse & Storage</h4>
                             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">24x7 CCTV guarded, moisture-controlled storage facilities with monthly flexible leasing terms.</p>
                         </div>
@@ -74,15 +74,15 @@
                     <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--dark); margin-bottom: 20px;">Why Hire Us in <?= esc($cityName) ?>?</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px;">
-                            <i class="fa-solid fa-circle-check" style="color: var(--primary); margin-top: 4px;"></i>
+                            <i class="bi bi-check-circle-fill" style="color: var(--primary); margin-top: 4px;"></i>
                             <div><strong>Free Pre-Move Survey:</strong> In-person or digital video survey to give you an accurate, upfront estimate with no hidden costs.</div>
                         </li>
                         <li style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px;">
-                            <i class="fa-solid fa-circle-check" style="color: var(--primary); margin-top: 4px;"></i>
+                            <i class="bi bi-check-circle-fill" style="color: var(--primary); margin-top: 4px;"></i>
                             <div><strong>Expert Packing Crew:</strong> Specialized packers trained to handle antique glassware, crockery, smart TVs, and heavy wooden furniture.</div>
                         </li>
                         <li style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px;">
-                            <i class="fa-solid fa-circle-check" style="color: var(--primary); margin-top: 4px;"></i>
+                            <i class="bi bi-check-circle-fill" style="color: var(--primary); margin-top: 4px;"></i>
                             <div><strong>Live GPS Tracking:</strong> Track your consignment throughout transit from <?= esc($cityName) ?> to your destination address.</div>
                         </li>
                     </ul>
@@ -145,13 +145,13 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 0.95rem;">
-                            <i class="fa-solid fa-calculator"></i> Get Free Quote
+                            <i class="bi bi-calculator-fill me-1"></i> Get Free Quote
                         </button>
                     </form>
 
                     <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color); text-align: center;">
                         <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $phone) ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; color: #059669; font-weight: 700; font-size: 0.9rem;">
-                            <i class="fa-brands fa-whatsapp fa-lg"></i> Direct WhatsApp Inquiry
+                            <i class="bi bi-whatsapp fs-5"></i> Direct WhatsApp Inquiry
                         </a>
                     </div>
                 </div>
