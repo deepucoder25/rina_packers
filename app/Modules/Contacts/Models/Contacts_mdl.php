@@ -69,18 +69,24 @@ class Contacts_mdl extends Model
         $name    = $request->getPost('name');
         $email   = $request->getPost('email');
         $phone   = $request->getPost('phone');
+        $service = $request->getPost('service');
         $qry     = $request->getPost('message');
+
+        $finalMsg = $qry;
+        if (!empty($service)) {
+            $finalMsg = "[Service: " . $service . "]" . (!empty($qry) ? " " . $qry : "");
+        }
 
         // Insert contact data into the database
         $this->db->table('contacts')->insert([
             'name'    => $name,
             'phone'   => $phone,
-            'message' => $qry,
+            'message' => $finalMsg,
             'email'   => $email
         ]);
 
         // Admin notification email
-        $message = "<div style='padding:30px;background:#e6e6e6;font-size: 18px !important;'>Client's Query: <b><q>" . esc($qry) . "</q></b><br><br>Client's Name:  <b>" . esc($name) . "</b><br><br>Phone Number: <b><a href='tel:" . esc($phone) . "'>" . esc($phone) . "</a></b><br><br>Email: <b> " . esc($email) . "</b></div>";
+        $message = "<div style='padding:30px;background:#e6e6e6;font-size: 18px !important;'>Client's Query: <b><q>" . esc($finalMsg) . "</q></b><br><br>Client's Name:  <b>" . esc($name) . "</b><br><br>Phone Number: <b><a href='tel:" . esc($phone) . "'>" . esc($phone) . "</a></b><br><br>Email: <b> " . esc($email) . "</b></div>";
 
         $mailService = service('email');
         if (!empty($this->emailConfig['SMTPHost'])) {
