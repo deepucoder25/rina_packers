@@ -37,11 +37,24 @@ class Services extends BaseController
             ];
         }
 
+        $slugToView = [
+            'household-moving'       => 'household_moving',
+            'office-relocation'      => 'office_relocation',
+            'vehicle-transportation' => 'vehicle_transportation',
+            'loading-unloading'      => 'loading_unloading',
+            'packing-moving'         => 'packing_moving',
+            'warehouse-storage'      => 'warehouse_storage',
+            'local-shifting'         => 'local_shifting',
+            'insurance-coverage'     => 'insurance_coverage',
+        ];
+
+        $viewName = $slugToView[$slug] ?? 'household_moving';
+
         $data['title']       = $service['title'] . " | " . $this->comp['company3'];
         $data['description'] = $service['desc'] . " Reliable service provided by " . $this->comp['company3'] . ".";
         $data['page']        = 'services';
         $data['module']      = 'services';
-        $data['view_file']   = 'Modules\Services\Views\service_detail';
+        $data['view_file']   = 'Modules\Services\Views\\' . $viewName;
         $data['service']     = $service;
         $data['allServices'] = $serviceModel->getAll();
 

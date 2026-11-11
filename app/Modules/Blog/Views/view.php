@@ -1,94 +1,135 @@
 <?php 
 $post = !empty($query[0]) ? $query[0] : null; 
 $dateStr = !empty($post->date) ? $post->date : (!empty($post->timestamp) ? date('M d, Y', strtotime($post->timestamp)) : '');
-$imgSrc = (!empty($post->image) && file_exists(FCPATH . 'uploads/blogs/' . $post->image))
+$hasImage = (!empty($post->image) && file_exists(FCPATH . 'uploads/blogs/' . $post->image));
+$imgSrc = $hasImage
     ? base_url('uploads/blogs/' . $post->image)
     : base_url('assets/images/about/packers_movers.jpg');
 ?>
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / 
-            <a href="<?= site_url('blog') ?>">Blog</a> / 
-            <span>Article Details</span>
-        </div>
-        <h1><?= esc($post->title ?? 'Blog Article') ?></h1>
+<!-- ==========================================================================
+     Article Hero & Breadcrumb Section
+     ========================================================================== -->
+<section class="blog-hero-section text-center position-relative">
+    <div class="container position-relative">
+        <!-- Top Breadcrumb Capsule Badge -->
+        <nav aria-label="breadcrumb">
+            <ol class="blog-top-badge list-unstyled">
+                <li class="d-inline-flex align-items-center">
+                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1.5"></i> Home</a>
+                </li>
+                <li class="blog-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
+                <li class="d-inline-flex align-items-center">
+                    <a href="<?= site_url('blog') ?>">Blog</a>
+                </li>
+                <li class="blog-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
+                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
+                    Article
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Article Headline -->
+        <h1 class="blog-hero-title">
+            <?= esc($post->title ?? 'Moving Guide & Relocation Article') ?>
+        </h1>
     </div>
-</div>
+</section>
 
-<section class="section">
+<!-- ==========================================================================
+     Article Main Section
+     ========================================================================== -->
+<section class="section py-5">
     <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-8">
-                <article class="card border-0 shadow-sm rounded-4 overflow-hidden p-4 p-md-5 bg-white">
-                    <?php if (!empty($post->image)): ?>
-                        <div class="mb-4 rounded-3 overflow-hidden">
-                            <img src="<?= $imgSrc ?>" 
-                                 alt="<?= esc($post->title ?? '') ?>" 
-                                 class="w-100 img-fluid rounded-3">
-                        </div>
-                    <?php endif; ?>
+        <div class="row g-4 g-lg-5">
+            
+            <!-- Article Body Column (Left) -->
+            <div class="col-12 col-lg-8">
+                <article class="blog-single-card">
+                    <!-- Featured Article Image -->
+                    <div class="blog-single-img-wrap">
+                        <img src="<?= $imgSrc ?>" 
+                             alt="<?= esc($post->title ?? '') ?>" 
+                             class="blog-single-img">
+                    </div>
 
-                    <div class="d-flex flex-wrap align-items-center justify-content-between pb-3 mb-4 border-bottom text-muted small">
-                        <div class="d-flex gap-3">
+                    <!-- Article Meta Header -->
+                    <div class="blog-single-header">
+                        <div class="blog-single-meta">
                             <?php if (!empty($dateStr)): ?>
-                                <span><i class="bi bi-calendar-event text-primary me-1"></i> <?= esc($dateStr) ?></span>
+                                <span class="blog-single-meta-item">
+                                    <i class="bi bi-calendar3"></i> <?= esc($dateStr) ?>
+                                </span>
                             <?php endif; ?>
                             <?php if (!empty($post->author)): ?>
-                                <span><i class="bi bi-person-circle text-success me-1"></i> <?= esc($post->author) ?></span>
+                                <span class="blog-single-meta-item">
+                                    <i class="bi bi-person-circle"></i> <?= esc($post->author) ?>
+                                </span>
                             <?php endif; ?>
                             <?php if (!empty($post->views)): ?>
-                                <span><i class="bi bi-eye text-secondary me-1"></i> <?= (int)$post->views ?> Views</span>
+                                <span class="blog-single-meta-item">
+                                    <i class="bi bi-eye"></i> <?= (int)$post->views ?> Views
+                                </span>
                             <?php endif; ?>
                         </div>
                     </div>
 
-                    <h2 class="fw-bold fs-3 mb-4"><?= esc($post->title ?? '') ?></h2>
-
-                    <div class="blog-content lh-lg text-secondary">
+                    <!-- Full Article Content -->
+                    <div class="blog-single-body">
                         <?= nl2br($post->description ?? '') ?>
                     </div>
 
-                    <div class="mt-5 pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3">
-                        <a href="<?= site_url('blog') ?>" class="btn btn-outline-primary rounded-pill">
-                            <i class="bi bi-arrow-left me-1"></i> Back to All Articles
+                    <!-- Article Footer Navigation -->
+                    <div class="blog-single-footer">
+                        <a href="<?= site_url('blog') ?>" class="blog-btn-nav outline">
+                            <i class="bi bi-arrow-left"></i> All Articles
                         </a>
-                        <a href="<?= site_url('contact') ?>" class="btn btn-primary rounded-pill">
-                            <i class="bi bi-envelope-fill me-1"></i> Contact Us
+                        <a href="<?= site_url('contact') ?>" class="blog-btn-nav primary">
+                            <i class="bi bi-telephone-fill"></i> Get Moving Quote
                         </a>
                     </div>
                 </article>
             </div>
 
-            <!-- Sidebar -->
-            <div class="col-lg-4">
-                <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
-                    <h5 class="fw-bold fs-6 mb-3"><i class="bi bi-fire text-primary me-2"></i> Recent Posts</h5>
-                    <div class="d-flex flex-column gap-3">
-                        <?php if (!empty($recent_posts)): ?>
-                            <?php foreach ($recent_posts as $p): 
-                                $pSlug = !empty($p->slug) ? $p->slug : $p->b_id;
-                                $pDate = !empty($p->date) ? $p->date : (!empty($p->timestamp) ? date('M d, Y', strtotime($p->timestamp)) : '');
-                            ?>
-                                <div class="d-flex gap-3 align-items-center">
-                                    <div class="flex-grow-1">
-                                        <h6 class="fw-bold mb-1 fs-6">
-                                            <a href="<?= site_url('blog/' . $pSlug) ?>" class="text-dark text-decoration-none hover-primary">
-                                                <?= esc($p->title ?? '') ?>
-                                            </a>
-                                        </h6>
-                                        <?php if (!empty($pDate)): ?>
-                                            <span class="text-muted small"><?= esc($pDate) ?></span>
-                                        <?php endif; ?>
+            <!-- Sidebar (Right) -->
+            <div class="col-12 col-lg-4">
+                <div class="blog-sidebar-sticky">
+                    <!-- Recent Posts Widget -->
+                    <div class="blog-sidebar-widget">
+                        <h3 class="blog-sidebar-title">
+                            <i class="bi bi-fire text-danger"></i> Recent Posts
+                        </h3>
+                        <div class="d-flex flex-column gap-2">
+                            <?php if (!empty($recent_posts)): ?>
+                                <?php foreach ($recent_posts as $p): 
+                                    $pSlug = !empty($p->slug) ? $p->slug : $p->b_id;
+                                    $pDate = !empty($p->date) ? $p->date : (!empty($p->timestamp) ? date('M d, Y', strtotime($p->timestamp)) : '');
+                                ?>
+                                    <div class="blog-recent-item">
+                                        <div class="flex-grow-1">
+                                            <h4 class="blog-recent-title">
+                                                <a href="<?= site_url('blog/' . $pSlug) ?>">
+                                                    <?= esc($p->title ?? '') ?>
+                                                </a>
+                                            </h4>
+                                            <?php if (!empty($pDate)): ?>
+                                                <span class="blog-recent-date">
+                                                    <i class="bi bi-clock"></i> <?= esc($pDate) ?>
+                                                </span>
+                                            <?php endif; ?>
+                                        </div>
                                     </div>
-                                </div>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <p class="text-muted small mb-0">No other recent articles.</p>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
 
-                <?= view('Modules\Blog\Views\sidebar') ?>
+                    <!-- Call To Action Widget -->
+                    <?= view('Modules\Blog\Views\sidebar') ?>
+                </div>
             </div>
+
         </div>
     </div>
 </section>

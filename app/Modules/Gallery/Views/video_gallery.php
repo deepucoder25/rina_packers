@@ -1,31 +1,42 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / <span>Video Gallery</span>
-        </div>
-        <h1>Video Gallery</h1>
-        <p>Explore our latest videos and highlights.</p>
+<!-- Page Hero Banner -->
+<section class="about-hero-section text-center position-relative">
+    <div class="container position-relative">
+        <nav aria-label="breadcrumb">
+            <ol class="about-top-badge list-unstyled">
+                <li class="d-inline-flex align-items-center">
+                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1"></i> Home</a>
+                </li>
+                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
+                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
+                    Video Gallery
+                </li>
+            </ol>
+        </nav>
+        <h1 class="about-hero-title">Video Gallery</h1>
+        <p class="about-hero-desc">Watch our relocation procedures, packing demonstrations, and highway transport fleets.</p>
     </div>
-</div>
+</section>
 
-<section class="section">
+<!-- Gallery Main Section -->
+<section class="py-5 bg-light">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 align-items-start">
+            <!-- Left Col-8 Content -->
             <div class="col-lg-8">
                 <div class="row g-4">
                     <?php if (!empty($videos)): ?>
                         <?php foreach ($videos as $video): ?>
-                            <div class="col-md-6">
-                                <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden">
+                            <div class="col-sm-6">
+                                <div class="gallery-item-card h-100">
                                     <div class="ratio ratio-16x9">
                                         <iframe src="<?= esc($video->video_url ?? '') ?>" 
-                                                title="<?= esc($video->title ?? '') ?>" 
+                                                title="<?= esc($video->title ?? 'Moving Video') ?>" 
                                                 allowfullscreen 
                                                 class="border-0"></iframe>
                                     </div>
                                     <?php if (!empty($video->title)): ?>
-                                        <div class="card-body p-3">
-                                            <h5 class="card-title fw-bold fs-6 mb-0"><?= esc($video->title) ?></h5>
+                                        <div class="p-3">
+                                            <h5 class="fw-bold fs-6 text-dark mb-0"><?= esc($video->title) ?></h5>
                                         </div>
                                     <?php endif; ?>
                                 </div>
@@ -33,46 +44,49 @@
                         <?php endforeach; ?>
                     <?php else: ?>
                         <div class="col-12">
-                            <div class="alert alert-info text-center py-5 rounded-4">
-                                <i class="bi bi-camera-video fs-1 d-block mb-2"></i>
-                                Videos will be updated soon.
+                            <div class="gallery-empty-state">
+                                <div class="gallery-empty-icon">
+                                    <i class="bi bi-camera-video"></i>
+                                </div>
+                                <h4 class="h5 fw-bold text-dark mb-2">Videos will be updated soon</h4>
+                                <p class="text-muted small mb-0">Our packing and moving video demonstrations are being curated for upload.</p>
                             </div>
                         </div>
                     <?php endif; ?>
                 </div>
             </div>
 
-            <!-- Sidebar -->
+            <!-- Right Col-4 Sticky Sidebar (120px) -->
             <div class="col-lg-4">
-                <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
-                    <h4 class="fw-bold fs-5 mb-3">Quick Navigation</h4>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2">
-                            <a href="<?= site_url('photo-gallery') ?>" class="text-decoration-none fw-semibold text-dark d-flex align-items-center justify-content-between p-2 rounded hover-bg-light">
-                                <span><i class="bi bi-camera me-2"></i> Photo Gallery</span>
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= site_url('video-gallery') ?>" class="text-decoration-none fw-semibold text-primary d-flex align-items-center justify-content-between p-2 rounded bg-light">
-                                <span><i class="bi bi-play-circle me-2"></i> Video Gallery</span>
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card border-0 shadow-sm rounded-3 p-4 bg-primary text-white">
-                    <h4 class="fw-bold fs-5 mb-2">Get in Touch</h4>
-                    <p class="small opacity-75 mb-3">Feel free to reach out to our team for any inquiries.</p>
-                    <?php if (!empty($phone)): ?>
-                        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $phone) ?>" class="btn btn-light fw-bold text-primary w-100 mb-2">
-                            <i class="bi bi-telephone-fill me-1"></i> <?= esc($phone) ?>
+                <div class="gallery-sidebar-sticky">
+                    <!-- Quick Navigation -->
+                    <div class="gallery-nav-card">
+                        <h4 class="h6 fw-bold text-dark mb-3 pb-2 border-bottom">
+                            <i class="bi bi-grid-fill text-primary me-2"></i> Quick Navigation
+                        </h4>
+                        <a href="<?= site_url('photo-gallery') ?>" class="gallery-nav-link">
+                            <span><i class="bi bi-camera me-2 nav-icon"></i> Photo Gallery</span>
+                            <i class="bi bi-chevron-right arrow-icon"></i>
                         </a>
-                    <?php endif; ?>
-                    <a href="<?= site_url('contact') ?>" class="btn btn-outline-light w-100">
-                        <i class="bi bi-envelope-fill me-1"></i> Contact Us
-                    </a>
+                        <a href="<?= site_url('video-gallery') ?>" class="gallery-nav-link active">
+                            <span><i class="bi bi-play-circle me-2 nav-icon"></i> Video Gallery</span>
+                            <i class="bi bi-chevron-right arrow-icon"></i>
+                        </a>
+                    </div>
+
+                    <!-- Get in Touch Card -->
+                    <div class="gallery-cta-card">
+                        <h4>Get in Touch</h4>
+                        <p>Speak directly with our moving specialist for customized quotes and dates.</p>
+                        <?php if (!empty($phone)): ?>
+                            <a <?= $phonehtml ?? 'href="tel:' . preg_replace('/[^0-9+]/', '', $phone) . '"' ?> class="gallery-cta-phone">
+                                <i class="bi bi-telephone-fill"></i> <?= esc($phone) ?>
+                            </a>
+                        <?php endif; ?>
+                        <a href="<?= site_url('contact') ?>" class="gallery-cta-btn">
+                            <i class="bi bi-envelope-fill"></i> Contact Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
