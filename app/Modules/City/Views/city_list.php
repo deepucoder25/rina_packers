@@ -1,14 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / 
-            <a href="<?= site_url('city') ?>">All States</a> / 
-            <span><?= esc($stateName) ?></span>
-        </div>
-        <h1>Packers & Movers in <?= esc($stateName) ?></h1>
-        <p>Verified, background-checked moving services connecting households and offices across <?= esc($stateName) ?>.</p>
-    </div>
-</div>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Packers & Movers in ' . ($stateName ?? 'State'),
+    'description' => 'Verified, background-checked moving services connecting households and offices across ' . ($stateName ?? 'State') . '.',
+    'breadcrumbs' => [
+        ['title' => 'Locations', 'url' => site_url('city')],
+        ['title' => $stateName ?? 'State', 'url' => '']
+    ]
+]) ?>
 
 <section class="section py-5">
     <div class="container">

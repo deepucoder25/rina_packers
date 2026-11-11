@@ -1,9 +1,12 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>Terms & Conditions</span>
-        </div>
-        <h1>Terms & Conditions</h1>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Terms & Conditions',
+    'description' => 'Terms and guidelines governing our packing, moving, and storage services.',
+    'breadcrumbs' => [
+        ['title' => 'Terms & Conditions', 'url' => '']
+    ]
+]) ?>
+
+<h1>Terms & Conditions</h1>
         <p>Operational terms, moving guidelines, and service agreements governing
             <?= esc($comp['company3'] ?? 'QuickRelocation') ?>.</p>
     </div>

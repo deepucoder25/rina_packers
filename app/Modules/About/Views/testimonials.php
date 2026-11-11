@@ -1,9 +1,12 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>Testimonials</span>
-        </div>
-        <h1>Customer Testimonials & Reviews</h1>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Customer Testimonials',
+    'description' => 'Read real feedback and genuine reviews from clients who moved with us.',
+    'breadcrumbs' => [
+        ['title' => 'Customer Testimonials', 'url' => '']
+    ]
+]) ?>
+
+<h1>Customer Testimonials & Reviews</h1>
         <p>See why thousands of families and businesses trust <?= esc($comp['company3']) ?>.</p>
     </div>
 </div>

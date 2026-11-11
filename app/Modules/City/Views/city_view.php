@@ -772,7 +772,7 @@
             <div class="col-12">
                 <div class="city-cta-banner">
                     <div class="row align-items-center g-4">
-                        <div class="col-12 col-lg-7">
+                        <div class="col-12 col-lg-6">
                             <span class="badge bg-white text-primary fw-bold text-uppercase px-3 py-1.5 rounded-pill mb-2 shadow-sm">
                                 <i class="bi bi-lightning-charge-fill text-warning"></i> Fast Response Within 15 Mins
                             </span>
@@ -781,22 +781,20 @@
                                 Speak with our verified moving coordinator for a customized relocation plan, transparent rates &amp; zero hidden surcharges.
                             </p>
                         </div>
-                        <div class="col-12 col-lg-5">
+                        <div class="col-12 col-lg-6">
                             <div class="city-cta-actions">
                                 <a <?= $phonehtml ?> class="city-cta-btn-call" title="Call Coordinator">
                                     <i class="bi bi-telephone-fill text-primary"></i>
                                     <span><?= $phone ?></span>
                                 </a>
-                                <div class="city-cta-btn-row">
-                                    <a href="<?= $whatsapphtml ?>?text=<?= urlencode('Hello ' . ($company3 ?? 'Rina Packers') . ', I need packers and movers in ' . $cityName . ', ' . $stateName . '.') ?>" target="_blank" rel="noopener noreferrer" class="city-cta-btn-wa" title="WhatsApp Chat">
-                                        <i class="bi bi-whatsapp"></i>
-                                        <span>WhatsApp</span>
-                                    </a>
-                                    <button type="button" class="city-cta-btn-quote" data-bs-toggle="modal" data-bs-target="#qteModal">
-                                        <i class="bi bi-calculator"></i>
-                                        <span>Get Quote</span>
-                                    </button>
-                                </div>
+                                <a href="<?= $whatsapphtml ?>?text=<?= urlencode('Hello ' . ($company3 ?? 'Rina Packers') . ', I need packers and movers in ' . $cityName . ', ' . $stateName . '.') ?>" target="_blank" rel="noopener noreferrer" class="city-cta-btn-wa" title="WhatsApp Chat">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                                <button type="button" class="city-cta-btn-quote" data-bs-toggle="modal" data-bs-target="#qteModal">
+                                    <i class="bi bi-calculator"></i>
+                                    <span>Get Quote</span>
+                                </button>
                             </div>
                         </div>
                     </div>

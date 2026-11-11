@@ -1,32 +1,10 @@
-<!-- ==========================================================================
-     About Hero & Breadcrumb Section
-     ========================================================================== -->
-<section class="about-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <!-- Top Breadcrumb Capsule Badge -->
-        <nav aria-label="breadcrumb">
-            <ol class="about-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1.5"></i> Home</a>
-                </li>
-                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    About Us
-                </li>
-            </ol>
-        </nav>
-
-        <!-- Main Heading -->
-        <h1 class="about-hero-title">
-            About <?= esc($site->name ?? 'Our Company') ?>
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="about-hero-desc">
-            Certified moving crew, transparent pricing, and over 15+ years of delivering peace of mind on every relocation.
-        </p>
-    </div>
-</section>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'About Us',
+    'description' => 'Learn more about our legacy, nationwide moving fleet, and certified packing standards across India.',
+    'breadcrumbs' => [
+        ['title' => 'About Us', 'url' => '']
+    ]
+]) ?>
 
 <!-- ==========================================================================
      Main Story & Track Record Section

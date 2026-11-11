@@ -1,9 +1,12 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>Privacy Policy</span>
-        </div>
-        <h1>Privacy Policy</h1>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Privacy Policy',
+    'description' => 'How we protect, process, and secure your personal details and moving data.',
+    'breadcrumbs' => [
+        ['title' => 'Privacy Policy', 'url' => '']
+    ]
+]) ?>
+
+<h1>Privacy Policy</h1>
         <p>How <?= esc($comp['company3'] ?? 'QuickRelocation') ?> protects, manages, and safeguards your personal
             information.</p>
     </div>

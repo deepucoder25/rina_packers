@@ -3,29 +3,13 @@ $serviceTitle = $service['title'] ?? 'Office Relocation';
 
 ?>
 
-<!-- Hero Banner -->
-<section class="about-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <nav aria-label="breadcrumb">
-            <ol class="about-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1"></i> Home</a>
-                </li>
-                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('services') ?>">Services</a>
-                </li>
-                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    <?= esc($serviceTitle) ?>
-                </li>
-            </ol>
-        </nav>
-        <h1 class="about-hero-title"><?= esc($serviceTitle) ?></h1>
-        <p class="about-hero-desc">Zero-downtime commercial workplace shifting, IT server moves, and modular cubicle setup.</p>
-    </div>
-</section>
-
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Office Relocation',
+    'description' => 'Zero-downtime commercial workplace shifting, IT server moves, and modular cubicle setup.',
+    'breadcrumbs' => [
+        ['title' => 'Office Relocation', 'url' => '']
+    ]
+]) ?>
 
 <!-- Main Full-Width Content Container -->
 <section class="py-5 bg-white">

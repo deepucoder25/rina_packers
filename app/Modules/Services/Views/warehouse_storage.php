@@ -3,29 +3,13 @@ $serviceTitle = $service['title'] ?? 'Storage Solutions';
 
 ?>
 
-<!-- Hero Banner -->
-<section class="about-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <nav aria-label="breadcrumb">
-            <ol class="about-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1"></i> Home</a>
-                </li>
-                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('services') ?>">Services</a>
-                </li>
-                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    <?= esc($serviceTitle) ?>
-                </li>
-            </ol>
-        </nav>
-        <h1 class="about-hero-title"><?= esc($serviceTitle) ?></h1>
-        <p class="about-hero-desc">Secure, moisture-free, 24x7 CCTV monitored warehousing for household furniture and commercial inventories.</p>
-    </div>
-</section>
-
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Storage Solutions',
+    'description' => 'Secure, moisture-free, 24x7 CCTV monitored warehousing for household furniture and commercial inventories.',
+    'breadcrumbs' => [
+        ['title' => 'Storage Solutions', 'url' => '']
+    ]
+]) ?>
 
 <!-- Main Full-Width Content Container -->
 <section class="py-5 bg-white">

@@ -5,12 +5,7 @@
  */
 ?>
 
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / <span>404 - Not Found</span>
-        </div>
-        <h1>Page Not Found</h1>
+<h1>Page Not Found</h1>
         <p>The page you requested could not be found or has moved to a new route.</p>
     </div>
 </div>

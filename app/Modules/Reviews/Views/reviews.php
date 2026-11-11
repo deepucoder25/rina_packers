@@ -1,12 +1,10 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / <span>Reviews</span>
-        </div>
-        <h1>Customer Reviews & Ratings</h1>
-        <p>Read verified feedback and ratings from our customers.</p>
-    </div>
-</div>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Customer Reviews & Ratings',
+    'description' => 'Read verified feedback, star ratings, and real moving experiences from our customers across India.',
+    'breadcrumbs' => [
+        ['title' => 'Reviews', 'url' => '']
+    ]
+]) ?>
 
 <section class="section" id="reviewsContainer">
     <div class="container">

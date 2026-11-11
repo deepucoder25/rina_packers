@@ -1,21 +1,10 @@
-<!-- Hero Banner Section -->
-<section class="about-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <nav aria-label="breadcrumb">
-            <ol class="about-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1"></i> Home</a>
-                </li>
-                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    Consignment Tracking
-                </li>
-            </ol>
-        </nav>
-        <h1 class="about-hero-title">Track Your Shipment</h1>
-        <p class="about-hero-desc">Real-time GPS status, transit location updates, and estimated delivery schedule.</p>
-    </div>
-</section>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Track Your Shipment',
+    'description' => 'Real-time GPS status, transit location updates, and estimated delivery schedule.',
+    'breadcrumbs' => [
+        ['title' => 'Consignment Tracking', 'url' => '']
+    ]
+]) ?>
 
 <!-- Tracking Main Section -->
 <section class="py-5 bg-light">

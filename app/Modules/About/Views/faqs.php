@@ -1,9 +1,12 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>FAQs</span>
-        </div>
-        <h1>Frequently Asked Questions</h1>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Frequently Asked Questions',
+    'description' => 'Get instant answers to all common questions about relocation, pricing, insurance, and transit timelines.',
+    'breadcrumbs' => [
+        ['title' => 'Frequently Asked Questions', 'url' => '']
+    ]
+]) ?>
+
+<h1>Frequently Asked Questions</h1>
         <p>Common questions about shifting process, pricing, packaging, and transit insurance.</p>
     </div>
 </div>

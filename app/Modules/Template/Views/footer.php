@@ -56,42 +56,42 @@ $websiteUrl  = 'www.rinapackers.com';
                 <div class="footer-title-underline"></div>
                 <ul class="footer-service-list">
                     <li>
-                        <a href="<?= site_url('household-moving') ?>">
+                        <a href="<?= site_url('services/household-moving') ?>">
                             <i class="bi bi-house-door"></i> <span>House Shifting</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('office-relocation') ?>">
+                        <a href="<?= site_url('services/office-relocation') ?>">
                             <i class="bi bi-building"></i> <span>Office Relocation</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('vehicle-transportation') ?>">
+                        <a href="<?= site_url('services/vehicle-transportation') ?>">
                             <i class="bi bi-car-front"></i> <span>Vehicle Transportation</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('loading-unloading') ?>">
+                        <a href="<?= site_url('services/loading-unloading') ?>">
                             <i class="bi bi-truck"></i> <span>Loading &amp; Unloading</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('packing-moving') ?>">
+                        <a href="<?= site_url('services/packing-moving') ?>">
                             <i class="bi bi-box-seam"></i> <span>Packing &amp; Unpacking</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('warehouse-storage') ?>">
+                        <a href="<?= site_url('services/warehouse-storage') ?>">
                             <i class="bi bi-archive"></i> <span>Storage Solutions</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('local-shifting') ?>">
+                        <a href="<?= site_url('services/local-shifting') ?>">
                             <i class="bi bi-geo-alt"></i> <span>Local Shifting</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('insurance-coverage') ?>">
+                        <a href="<?= site_url('services/insurance-coverage') ?>">
                             <i class="bi bi-shield-check"></i> <span>Insurance Coverage</span>
                         </a>
                     </li>

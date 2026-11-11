@@ -1,21 +1,10 @@
-<!-- Page Hero Banner -->
-<section class="about-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <nav aria-label="breadcrumb">
-            <ol class="about-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1"></i> Home</a>
-                </li>
-                <li class="about-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    Photo Gallery
-                </li>
-            </ol>
-        </nav>
-        <h1 class="about-hero-title">Photo Gallery</h1>
-        <p class="about-hero-desc">Explore verified photos of our packing processes, fleet, and successful relocations.</p>
-    </div>
-</section>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Photo Gallery',
+    'description' => 'Explore verified photos of our packing processes, fleet, and successful relocations.',
+    'breadcrumbs' => [
+        ['title' => 'Photo Gallery', 'url' => '']
+    ]
+]) ?>
 
 <!-- Gallery Main Section -->
 <section class="py-5 bg-light">
@@ -31,7 +20,7 @@
                                     <div class="gallery-thumb-container">
                                         <img src="<?= base_url('assets/uploads/gallery/' . ($photo->image ?? '')) ?>" 
                                              alt="<?= esc($photo->title ?? 'Moving Gallery') ?>"
-                                             onerror="this.src='<?= base_url('assets/images/about/packers_movers.jpg') ?>'">
+                                             onerror="this.src='<?= base_url('assets/img/slider.webp') ?>'">
                                     </div>
                                     <?php if (!empty($photo->title) || !empty($photo->album_name)): ?>
                                         <div class="p-3">

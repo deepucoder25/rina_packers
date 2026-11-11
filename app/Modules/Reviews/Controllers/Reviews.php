@@ -71,7 +71,7 @@ class Reviews extends BaseController
             $uploadedImages = [];
             $files = $this->request->getFiles();
             if (!empty($files['review_images'])) {
-                $uploadPath = FCPATH . 'assets/images/reviews/';
+                $uploadPath = FCPATH . 'assets/img/reviews/';
                 if (!is_dir($uploadPath)) {
                     mkdir($uploadPath, 0777, true);
                 }
@@ -81,7 +81,7 @@ class Reviews extends BaseController
                     if ($img && $img->isValid() && !$img->hasMoved()) {
                         $newName = $img->getRandomName();
                         $img->move($uploadPath, $newName);
-                        $uploadedImages[] = 'assets/images/reviews/' . $newName;
+                        $uploadedImages[] = 'assets/img/reviews/' . $newName;
                     }
                 }
             }

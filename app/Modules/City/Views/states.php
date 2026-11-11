@@ -1,12 +1,10 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / <span>All India Service Locations</span>
-        </div>
-        <h1>All India Packers & Movers Locations</h1>
-        <p>Door-to-door household relocation, office moving, and vehicle transport across 500+ Indian cities in all major states.</p>
-    </div>
-</div>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'All India Packers & Movers Locations',
+    'description' => 'Door-to-door household relocation, office moving, and vehicle transport across 500+ Indian cities in all major states.',
+    'breadcrumbs' => [
+        ['title' => 'Locations', 'url' => '']
+    ]
+]) ?>
 
 <section class="section py-5">
     <div class="container">

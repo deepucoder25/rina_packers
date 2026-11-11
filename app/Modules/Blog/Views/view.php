@@ -4,36 +4,16 @@ $dateStr = !empty($post->date) ? $post->date : (!empty($post->timestamp) ? date(
 $hasImage = (!empty($post->image) && file_exists(FCPATH . 'uploads/blogs/' . $post->image));
 $imgSrc = $hasImage
     ? base_url('uploads/blogs/' . $post->image)
-    : base_url('assets/images/about/packers_movers.jpg');
+    : base_url('assets/img/slider.webp');
 ?>
-<!-- ==========================================================================
-     Article Hero & Breadcrumb Section
-     ========================================================================== -->
-<section class="blog-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <!-- Top Breadcrumb Capsule Badge -->
-        <nav aria-label="breadcrumb">
-            <ol class="blog-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1.5"></i> Home</a>
-                </li>
-                <li class="blog-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('blog') ?>">Blog</a>
-                </li>
-                <li class="blog-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    Article
-                </li>
-            </ol>
-        </nav>
-
-        <!-- Article Headline -->
-        <h1 class="blog-hero-title">
-            <?= esc($post->title ?? 'Moving Guide & Relocation Article') ?>
-        </h1>
-    </div>
-</section>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => $post->title ?? 'Moving Guide',
+    'description' => !empty($post->meta_desc) ? $post->meta_desc : 'Detailed relocation guide, professional packing tips, and moving checklist.',
+    'breadcrumbs' => [
+        ['title' => 'Blog', 'url' => site_url('blog')],
+        ['title' => $post->title ?? 'Article', 'url' => '']
+    ]
+]) ?>
 
 <!-- ==========================================================================
      Article Main Section

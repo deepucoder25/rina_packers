@@ -1,37 +1,10 @@
-<!-- ==========================================================================
-     Contact Hero / Breadcrumb Section
-     ========================================================================== -->
-<section class="contact-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <!-- Top Breadcrumb Capsule Badge -->
-        <nav aria-label="breadcrumb">
-            <ol class="contact-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1.5"></i> Home</a>
-                </li>
-                <li class="contact-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    Contact Us
-                </li>
-            </ol>
-        </nav>
-
-        <!-- Main Heading -->
-        <h1 class="contact-hero-title">
-            Get in Touch With
-            <span class="contact-hero-accent">Our Moving Experts
-                <svg class="contact-accent-curve" viewBox="0 0 180 14" preserveAspectRatio="none">
-                    <path d="M2,5 Q90,14 178,3" stroke="var(--secondary)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-                </svg>
-            </span>
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="contact-hero-desc">
-            Have questions about moving dates, packing material, or pricing? Our dedicated relocation coordinators are available 24/7 to assist you with transparent, upfront quotes.
-        </p>
-    </div>
-</section>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Contact Us',
+    'description' => 'Have questions about moving dates, packing material, or pricing? Our team is available 24/7 to assist.',
+    'breadcrumbs' => [
+        ['title' => 'Contact Us', 'url' => '']
+    ]
+]) ?>
 
 <!-- ==========================================================================
      Main Contact Section

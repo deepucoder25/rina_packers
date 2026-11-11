@@ -1,32 +1,10 @@
-<!-- ==========================================================================
-     Blog Hero & Breadcrumb Section
-     ========================================================================== -->
-<section class="blog-hero-section text-center position-relative">
-    <div class="container position-relative">
-        <!-- Top Breadcrumb Capsule Badge -->
-        <nav aria-label="breadcrumb">
-            <ol class="blog-top-badge list-unstyled">
-                <li class="d-inline-flex align-items-center">
-                    <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill me-1.5"></i> Home</a>
-                </li>
-                <li class="blog-top-badge-sep d-inline-flex align-items-center" aria-hidden="true">/</li>
-                <li class="d-inline-flex align-items-center text-white fw-bold active" aria-current="page">
-                    Blog &amp; Articles
-                </li>
-            </ol>
-        </nav>
-
-        <!-- Main Heading -->
-        <h1 class="blog-hero-title">
-            Moving Insights &amp; Packing Guides
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="blog-hero-desc">
-            Expert relocation tips, city shifting advice, and professional logistics guides to make your move seamless and stress-free.
-        </p>
-    </div>
-</section>
+<?= view('Modules\Template\Views\breadcrumb', [
+    'title'       => 'Moving Insights & Packing Guides',
+    'description' => 'Expert relocation tips, city shifting advice, and professional logistics guides to make your move seamless and stress-free.',
+    'breadcrumbs' => [
+        ['title' => 'Blog & Articles', 'url' => '']
+    ]
+]) ?>
 
 <!-- ==========================================================================
      Blog Main Section
@@ -46,7 +24,7 @@
                             $hasImage = (!empty($b->image) && file_exists(FCPATH . 'uploads/blogs/' . $b->image));
                             $imgSrc = $hasImage 
                                 ? base_url('uploads/blogs/' . $b->image)
-                                : base_url('assets/images/about/packers_movers.jpg');
+                                : base_url('assets/img/slider.webp');
                         ?>
                             <div class="col-12 col-md-6">
                                 <article class="blog-modern-card">
